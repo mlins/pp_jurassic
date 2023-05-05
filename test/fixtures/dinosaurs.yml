@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jake:
+  name: Jake
+  species: Megalosaurus
+
+sally:
+  name: Sally
+  species: Velociraptor
+
+george:
+  name: George
+  species: Tyrannosaurus
+
+anne:
+  name: Anne
+  species: Spinosaurus
+
+colleen:
+  name: Colleen
+  species: Triceratops
+
+ted:
+  name: Ted
+  species: Stegosaurus
+
+janelle:
+  name: Janelle
+  species: Brachiosaurus
+
+jim:
+  name: Jim
+  species: Anklyosaurus
