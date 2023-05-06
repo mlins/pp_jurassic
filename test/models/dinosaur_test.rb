@@ -14,11 +14,23 @@ class DinosaurTest < ActiveSupport::TestCase
   end
 
   test "Tyrannosaurus is a valid species" do
-    assert Dinosaur.new(name: "Fred", species: "Tyrannosaurus", cage_id: cages(:one).id).valid?
+    assert Dinosaur.new(name: "Fred", species: "Tyrannosaurus", cage_id: cages(:two).id).valid?
   end
 
   test "Notasaurus is not a valid species" do
     refute Dinosaur.new(name: "Fred", species: "Notasaurus", cage_id: cages(:one).id).valid?
+  end
+
+  test "compatiable dinosaurs are valid" do
+    assert Dinosaur.new(name: "Fred", species: "Megalosaurus", cage_id: cages(:one).id).valid?
+  end
+
+  test "incopatiable dinosaurs are not valid" do
+    refute Dinosaur.new(name: "Fred", species: "Tyrannosaurus", cage_id: cages(:one).id).valid?
+  end
+
+  test "doesn't allow any dinosaurs when cage is down" do
+    refute Dinosaur.new(name: "Fred", species: "Tyrannosaurus", cage_id: cages(:four).id).valid?
   end
 
   test "diet returns carnivore for Tyrannosaurus" do

@@ -1,11 +1,18 @@
 class Cage < ApplicationRecord
-  include ActiveModel::Validations
-
   POWER_STATUSES = ["active", "down"]
 
   has_many :dinosaurs, dependent: :destroy
 
-  validates_with CageCompatibilityValidator
-  validates_with CagePoweredDownValidator
+  validates_associated :dinosaurs
   validates :power_status, presence: true, inclusion: { in: POWER_STATUSES }
+
+  def accepting?
+    power_status == "active"
+  end
+
+  def accepting_error_message
+    if power_status == "down"
+      "Cage is powered down"
+    end
+  end
 end
