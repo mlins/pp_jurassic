@@ -16,7 +16,7 @@
 
 ## Things I would do with more time
 
-I completed all of the requirements and a decent chunk of the bonus. Here's what I didn't complete:
+I completed all of the requirements and a decent chunk of the bonus. Here's the *bonus* I didn't complete:
 
 - Cages have a maximum capacity for how many dinosaurs it can hold.
 - Cages know how many dinosaurs are contained.
