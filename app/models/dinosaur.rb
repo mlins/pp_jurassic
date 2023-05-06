@@ -21,8 +21,12 @@ class Dinosaur < ApplicationRecord
   validates_with DinosaurCompatibilityValidator, if: :cage
 
   def compatible?(other_dinosaurs)
-    other_dinosaurs.all? do |other_dinosaur|
-      diet == "herbivore" || (diet == "carnivore" && species == other_dinosaur.species)
+    case diet
+    when "carnivore"
+      other_dinosaurs.all? { |dinosaur| dinosaur.diet == "carnivore" } &&
+      other_dinosaurs.all? { |dinosaur| dinosaur.species == species }
+    when "herbivore"
+      other_dinosaurs.all? { |dinosaur| dinosaur.diet == "herbivore" }
     end
   end
 

@@ -45,8 +45,12 @@ class DinosaurTest < ActiveSupport::TestCase
     assert dinosaurs(:jake).compatible?([dinosaurs(:jill)])
   end
 
-  test "compatible? returns false if dinosaurs have different diets" do
+  test "compatible? returns false if dinosaurs have different diets (carnivore/herbivore)" do
     refute dinosaurs(:jake).compatible?([dinosaurs(:jim)])
+  end
+
+  test "compatible? returns false if dinosaurs have different diets (herbivore/carnivore)" do
+    refute dinosaurs(:jim).compatible?([dinosaurs(:jake)])
   end
 
   test "compatible? returns false if dinosaurs are carnivores and are different species" do
