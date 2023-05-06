@@ -1,24 +1,27 @@
-# README
+# Prize Picks Jurassic Park
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
+- Docker (tested with 20.10.24)
+- Docker Compose (tested with 2.17.2)
 
-Things you may want to cover:
+## Quick Start
 
-* Ruby version
+1. Clone the repo
+2. Run `docker-compose up -d`
+3. Run `curl localhost:3000/dinosaurs` to see the list of dinosaurs
+4. Run `curl localhost:3000/cages` to see the list of cages
+6. Run `docker compose run web bin/rails test` to run the tests
+7. To see other available endpoints, run `docker compose run web bin/rails routes`
 
-* System dependencies
+## Things I would do with more time
 
-* Configuration
+I completed all of the requirements and a decent chunk of the bonus. Here's what I didn't complete:
 
-* Database creation
+- Cages have a maximum capacity for how many dinosaurs it can hold.
+- Cages know how many dinosaurs are contained.
+- Must be able to query a listing of dinosaurs in a specific cage.
+- When querying dinosaurs or cages they should be filterable on their attributes (Cages on their power status and dinosaurs on species).
 
-* Database initialization
+## Concurrency
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Because this project uses Rails and Puma, you mostly get concurrency for free. I'd need some more specifics on the reuirements to know if I'd need to do anything special. At a minimum, we'd want to tweak the puma workers and threads based on load and compute resources. We'd also want to tweak the connection pool settings based on the number of puma threads/workers.
