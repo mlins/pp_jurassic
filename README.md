@@ -7,9 +7,10 @@
 ## Quick Start
 
 1. Clone the repo
-2. Run `docker-compose up -d`
-3. Run `curl localhost:3000/dinosaurs` to see the list of dinosaurs
-4. Run `curl localhost:3000/cages` to see the list of cages
+2. Run `docker compose up -d`
+3. ... wait a few seconds for db initliazation
+4. Run `curl localhost:3000/dinosaurs` to see the list of dinosaurs
+5. Run `curl localhost:3000/cages` to see the list of cages
 6. Run `docker compose run web bin/rails test` to run the tests
 7. To see other available endpoints, run `docker compose run web bin/rails routes`
 
