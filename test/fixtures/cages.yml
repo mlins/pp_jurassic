@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  power_status: active
+
+two:
+  power_status: active
+
+three:
+  power_status: active
+
+four:
+  power_status: down

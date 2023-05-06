@@ -3,31 +3,39 @@
 jake:
   name: Jake
   species: Megalosaurus
+  cage: one
+
+jill:
+  name: Jill
+  species: Megalosaurus
+  cage: one
 
 sally:
   name: Sally
-  species: Velociraptor
+  species: Tyrannosaurus
+  cage: two
 
 george:
   name: George
   species: Tyrannosaurus
-
-anne:
-  name: Anne
-  species: Spinosaurus
+  cage: two
 
 colleen:
   name: Colleen
   species: Triceratops
+  cage: three
 
 ted:
   name: Ted
   species: Stegosaurus
+  cage: three
 
 janelle:
   name: Janelle
   species: Brachiosaurus
+  cage: three
 
 jim:
   name: Jim
-  species: Anklyosaurus
+  species: Ankylosaurus
+  cage: three

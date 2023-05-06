@@ -10,6 +10,18 @@ class Dinosaur < ApplicationRecord
     "Triceratops"   => "herbivore"
   }
 
+  belongs_to :cage
+
   validates :name, presence: true
   validates :species, presence: true, inclusion: { in: SPECIES_DIET_MAP.keys }
+
+  def compatible?(other_dinosaurs)
+    other_dinosaurs.all? do |other_dinosaur|
+      diet == "herbivore" || (diet == "carnivore" && species == other_dinosaur.species)
+    end
+  end
+
+  def diet
+    SPECIES_DIET_MAP[species]
+  end
 end
