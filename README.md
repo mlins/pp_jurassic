@@ -11,7 +11,7 @@
 3. ... wait a few seconds for db initliazation
 4. Run `curl localhost:3000/dinosaurs` to see the list of dinosaurs
 5. Run `curl localhost:3000/cages` to see the list of cages
-6. Run `docker compose run web bin/rails test` to run the tests
+6. Run `docker compose run web bin/rails test --verbose` to run the tests
 7. To see other available endpoints, run `docker compose run web bin/rails routes`
 
 ## Things I would do with more time
